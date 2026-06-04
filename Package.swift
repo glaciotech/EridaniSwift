@@ -15,9 +15,6 @@ let package = Package(
         .library(
             name: "EridaniSwift",
             targets: ["EridaniSwift"]),
-        .library(
-            name: "EridaniStorageOptions",
-            targets: ["EridaniStorageOptions"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-collections.git", from: "1.3.0"),
@@ -42,11 +39,6 @@ let package = Package(
             ],
             path: "Sources/EridaniSwift"
         ),
-        .target(name: "EridaniStorageOptions",
-                dependencies: ["EridaniSwift",
-                               .product(name: "OrderedCollections", package: "swift-collections"),
-                               .product(name: "Yams", package: "Yams")
-            ]),
         .testTarget(
             name: "EridaniSwiftTests",
             dependencies: [
